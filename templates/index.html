@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio: Craig Edwards</title>
+    <link rel="stylesheet" href="../static/CSS/main.css">
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0px;
+}
+
+body{
+    background-color: white;
+    color: darkblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+nav li {
+    display: inline;
+    margin: 20px;
+    
+    
+}
+
+nav ul{
+    background-color: rgb(71, 3, 119);
+    margin: 0;  /*on outside of container, nav ul in this case*/
+    list-style-type: none; /* removes bullets from nav list elements*/
+    width: 100%;
+    padding: 0px;  /*space outside containter, between nav ul and its container*/
+    
+}
+
+nav a:link{
+    color: rgb(130, 154, 220)
+}
+
+nav {
+    display: block;
+    color: lightsteelblue;
+}
+
+nav a:visited{
+    color: rgb(192, 203, 255);
+}
+
+nav a{
+    
+    text-decoration: none;  /*removes underlines beneath links*/
+}
+
+nav a:hover{
+    color:white;
+    background-color: rgba(3, 15, 119, 0.521);
+    
+    padding: 1px;
+}
+
+.nav-links{
+    font-size: 30px;
+    color: lightsteelblue;
+
+}
+
+/*linear-gradient: example below is black to black gradient with 0.5 opacity. can change rbg values
+for different background colors; gradient controlled by opacity with first set of rbga numbers starting at top of image,
+second for bottom*/
+.hero-image{
+    background-image: linear-gradient(rgba(112, 106, 237, 0.35), rgba(112, 106, 237, 0.35)), url("../../static/images/yosemite-pano-1-best-for-emails.jpg");
+    background-repeat: repeat;
+    width: cover;
+   
+    
+    position: relative;  /*keeps in line with other elements*/
+}
+
+.fame-image{
+    background-image: linear-gradient(rgba(112, 106, 237, 0.35), rgba(112, 106, 237, 0.35)), url("../static/images/Edwards_AFB_2020_Cover.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    background-position: 30% 20%;
+    position:relative; 
+    margin-top:20px /*keeps in line with other elements*/
+}
+
+.base-pic{
+    width: 100%;
+    margin-top:20px /*keeps in line with other elements*/
+}
+
+.hero-text{
+    color: darkblue;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(3, 15, 119, 0.521);
+}
+
+#main {
+    width: 70%;
+    float: left;
+    height: 100%;  /*prevents any overflow from spilling in below #side?*/
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+/* #main-employer {
+    width:;
+    align-self:center;
+    height: 100%;  /*prevents any overflow from spilling in below #side?*/
+   
+/* } */
+
+#side {
+    width: 20%; /* 75% + 20% != 100% because need some room for margins around sidebar/main */
+    float: left;
+    height: 100%; /*prevents any overflow from spilling in below #main?*/
+    padding: 20px;
+    
+}
+
+#side-employer {
+    float: left;
+    height: 100%; /*prevents any overflow from spilling in below #main?*/
+    padding: 20px;
+}
+.flower-banner{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%
+}
+
+
+#main-daughter {
+    width: 35%;
+    float: left;
+    height: 100%;  /*prevents any overflow from spilling in below #side?*/
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+
+#side-daughter {
+    width: 55%; /* 75% + 20% != 100% because need some room for margins around sidebar/main */
+    float: left;
+    height: 100%; /*prevents any overflow from spilling in below #main?*/
+    padding: 20px;
+}
+
+#profile-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    max-width: 100%;
+    height:auto;
+}
+
+#profile-details ul{
+    list-style-type: none;
+    padding-left: 0px;  /* removed indentation that remained after bullets removed (set to none)*/
+}
+
+#profile h2 {
+    display:inline; /*keeps h2 from taking up all the space on the page*/
+}
+
+#profile-details{
+    margin-right: 30px;
+    text-align: center;
+}
+
+.side-articles, .main-articles {
+    padding:10px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+    position: relative
+}
+
+.side-articles:before, .main-articles:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 20px solid white;
+    border-right: 20px solid darkgray;
+    width: 0;
+   }
+
+
+.side-articles{
+    background-color: rgba(3, 15, 119, 0.521);
+    
+}
+
+.main-articles{
+    background-color: rgba(3, 15, 119, 0.212);
+}
+
+form{
+    margin-top: 20px;
+}
+
+textarea, input{
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 90%
+}
+
+.side-articles h1{
+    margin-bottom: 20px;
+}
+
+footer{
+    bottom: 0px;
+    width: 100%;
+    height: 5vh; /* vh signifies percent of area currently viewable*/
+    margin-top: 0px; /*doesn't seem necessary to me, but added to keep <hr> tight*/
+}
+
+footer div{
+    text-align: center;
+    color: darkblue;
+}
+
+footer hr{
+    margin-top: 0px;
+    height: 12px;
+    border: 0px;
+    box-shadow: inset 0 12px 12px -12px white;
+}
+
+button{
+    margin-left:5px;
+}
+
+/* needed auto overflow when element contains floats, so that 
+everything below the element (<main> in this case) moves below the element*/
+main{
+    overflow:auto;  
+}
+
+.table-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-data-image{
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top:10px;
+
+}
+
+.table-data-image-employ{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+
+}
+.table-data-image-food-logo{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:20px;
+
+}
+
+input{
+color:gray;
+width:300px
+}
+
+.wife-banner{
+    background-image: url("../static/images/flower-banner-purple-1600x1200.jpg");
+   /* background-repeat: repeat;
+    width: cover;
+    height: 50px;
+    position: relative;  /*keeps in line with other elements*/ 
+}
+
+
+.daughter-banner {
+    display: inline;
+    margin: 0px;
+    
+    
+}
+
+.dog-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.flex-container-1{
+    display: flex;
+    padding: 10px;
+    
+}
+
+.items-1{
+    padding: 10px;
+}
+
+.container-2{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.rest-logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    padding-top: 15px;
+}
+
+
+.rest-logos-img{
+    margin: 10px;
+} 
+
+.fl-bird-img-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:flex-start;  
+}
+
+.flr-bird-img{
+    margin: 20px; 
+}
+
+.employ{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 15px;  
+}
+
+.employ-size{
+    width: 700px;
+    margin:20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+p {
+    font-size: 20px
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:active {
+  text-decoration: none;
+  font-weight: bold
+}
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul class="nav-links" style="padding-bottom: -20">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://bird-on-the-brain-flask.herokuapp.com/">Flask App</a></li>
+            <li><a href="https://jacedwards.github.io/Bird-Brain-Philanthropy/#/">React App</a></li>
+
+            <li><a href="{{ url_for('recs') }}">Recommendations</a></li>
+            <li><a href="../static/images/Resume.pdf">Resum&eacute;</a></li>
+            <li><a href="../static/images/Cover_letter.pdf">Cover Letter</a></li>
+
+        </ul>        
+    </nav>
+
+    <table style="margin-left: auto; margin-right: auto;margin-top: 20px">
+        <tr>
+            <td>
+                <img src="../static/images/jinja-logo.png" height="90px">
+            </td>
+            <td>
+                <img src="../static/images/react-logo.png" height="90px">
+            </td>
+            <td>
+                <img src="../static/images/graphql-logo.png" height="95px">
+            </td>
+            <td>
+                <img src="../static/images/nodejs-shield.png" height="100px">
+            </td>
+            <td>
+                <img src="../static/images/sql-logo.png" height="100px">
+            </td>
+
+
+
+            <td>
+                <img src="../static/images/PostgreSQL.png" height="92px">
+            </td>
+
+            <td>
+                <img src="../static/images/flask-logo-round.png" height="100px">
+            </td>
+            <td>
+                <img src="../static/images/python-logo.png" height="100px">
+            </td>
+
+            <td>
+                <img src="../static/images/AWS_cert_logo.jpg" height="90px">
+            </td>
+
+            <td>
+                <img src="../static/images/CSS3-logo.png" height="90px">
+            </td>
+            <td>
+                <img src="../static/images/HTML-logo.png" height="90px">
+            </td>
+            <td>
+                <img src="../static/images/JavaScript-logo.svg" height="90px">
+            </td>
+            <td>
+                <img src="../static/images/vue-logo.png" height="90px">
+            </td>
+            <td>
+                <img src="../static/images/bootstrap-logo.png" height="95px">
+            </td>
+
+
+            <td>
+                <img src="../static/images/mongodb-logo.jpg" height="95px">
+            </td>
+            <td>
+                <img src="../static/images/firebase-logo.png" height="95px">
+            </td>
+            <td>
+                <img src="../static/images/jsx-logo.png" height="89px">
+            </td>
+            <td>
+                <img src="../static/images/RESTful-logo.png" height="95px">
+            </td>
+
+            <td>
+                <img src="../static/images/github-logo.png" height="95px">
+            </td>
+            <td>
+                <img src="../static/images/sqlalchemy-logo.png" height="95px">
+            </td>
+        </tr>
+    </table>
+
+    <!-- <div class="flex-container-1" style=" margin-bottom: -35px">
+        
+            
+        <div class="items-1"><img src="../static/images/" height="200px"></div>
+        <div class="items-1"><img src="" height="75"></div>
+        <div class="items-1"><img src="" height="75"></div>
+        <div class="items-1"><img src="" height="75"></div>
+        <div class="items-1"><img src="" height="75"></div>                                            
+    </div> -->
+
+    <!-- <div class="flex-container-1" style="padding-top: 20px; margin-bottom: -35px">
+        
+            
+        <div class="items-1"><img src="../static/images/yosemite-pano-1-best-for-emails.jpg" height="75" object-position="scale-down"></div>
+        <div class="items-1"><img src="../static/images/blue_2_cloud.jpg" height="75" object-position="scale-down"></div>
+        <div class="items-1"><img src="../static/images/yosemite-2-emails.jpg" height="75" object-position="scale-down"></div>
+        <div class="items-1"><img src="../static/images/blue_3_brush2.jpg" height="75" object-position="scale-down"></div>
+        <div class="items-1"><img src="../static/images/sequoia-pano-1-email.jpg" height="75" object-position="scale-down"></div>                                            
+    </div> -->
+
+<div>
+<div class="hero-text" style="margin-top: -20px; margin-bottom: -17px">
+    <p style="font-size: 37px; font-weight:bold" >Craig Edwards</p>
+    <p style="font-size: 31px; margin-top:-40px; font-weight:bold" >Portfolio</p>
+
+</div>
+</div>
+
+
+
+    <main class="employ" style="align-content:center">
+
+       
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:350px">
+                <table>
+                    <tr>
+                        <p style="text-align:center">
+                            Craig Edwards
+                        </p>
+                    </tr>
+                    
+                    <tr>
+                        <p>
+                            <img src="../static/images/profile_smile.JPG" alt="Profile Pic" width="220px" height="293px" class="center" >
+                        </p>    
+                    </tr>
+                    <tr>
+                        <p style="text-align:center">
+                            <a href="mailto:craigephd@gmail.com">Email</a><span>  |  </span> <a href="https://www.linkedin.com/in/craig-edwards-fs-phd/">LinkedIn</a> <span>  |  </span> 
+                            <a href="https://github.com/JACedwards">Github</a><br>
+                        </p>
+                    </tr>
+                </table>
+            </div> 
+            
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="https://bird-on-the-brain-flask.herokuapp.com/">
+                    <table>
+                    <tr >
+                        <p style="text-align:center">Bird on the Brain</p>
+                        <p style="text-align:center; margin-bottom:-5px">Flask App for Birders</p>
+                        <br>
+
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="https://bird-on-the-brain-flask.herokuapp.com/">
+                            <img src="../static/images/bird-on-brain.png" alt="Bird on the Brain Flask App" width="335px" height="214px"  class="center" >
+                        </a>
+                        </p>
+                    </tr>
+                </table>
+                </a>
+            </div>
+
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="https://jacedwards.github.io/Bird-Brain-Philanthropy/#/">
+                <table>
+                    <tr >
+                        <p style="text-align:center">Bird Brain Philanthropy</p>
+                        <p style="text-align:center;margin-bottom:-5px">React App eCommerce Riff</p>
+                        <br>
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="https://jacedwards.github.io/Bird-Brain-Philanthropy/#/">
+                            <img src="../static/images/bird-philanthropy.png" alt="Bird on the Brain Flask App" width="335px" height="214px"  class="center" >
+                        </a>
+                        </p>
+                    </tr>
+                </table>
+                </a>
+            </div>
+
+            <!-- Adding certification -->
+
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="../static/images/AWS_Cert_Exam_Results.pdf">
+                <table>
+                    <tr >
+                        <p style="text-align:center">AWS Certified</p>
+                        <p style="text-align:center; margin-bottom:-5px">Cloud Practitioner</p>
+                        <br>
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="../static/images/AWS_Cert_Exam_Results.pdf">
+                            <img src="../static/images/aws_offical.png" alt="AWS Certification Logo" width="260" height="260"  class="center">
+                        </a>
+                        </p>
+                    </tr>
+                </table>
+                </a>
+            </div>
+
+            
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="../static/images/Rec_Scranton.pdf">
+                <table>
+                    <tr >
+                        <p style="text-align:center">GE & Delta Software Manager</p>
+                        <p style="text-align:center; margin-bottom:-5px">Recommendation</p>
+                        <br>
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="../static/images/Rec_Scranton.pdf">
+                            <img src="../static/images/Scranton-pic-cropped.jpg" alt="Dr. Bruce Scranton" width="248" height="220"  class="center">
+                        </a>
+                        </p>
+                    </tr>
+                </table>
+                </a>
+            </div>
+
+
+
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="../static/images/Rec_Greeley.pdf">
+                <table>
+                    <tr >
+                        <p style="text-align:center">Chair of Art & Design</p>
+                        <p style="text-align:center;margin-bottom:-5px">Recommendation</p>
+                        <br>
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="../static/images/Rec_Greeley.pdf">
+                            <img src="../static/images/Greeley-pic-cropped.jpg" alt="Dr. Anne Greeley" width="250" height="220"  class="center">
+                        </a>
+                        </p>
+                    </tr>
+                </table>
+                </a>
+            </div>
+
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="https://www.linkedin.com/in/craig-edwards-fs-phd/details/recommendations/?detailScreenTabIndex=0">
+
+                    <div>
+
+                <table>
+                    <tr >
+                        <p style="text-align:center">LinkedIn</p>
+                        <p style="text-align:center;margin-bottom:-5px">Recommendations</p>
+                        <br>
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="https://www.linkedin.com/in/craig-edwards-fs-phd/details/recommendations/?detailScreenTabIndex=0">
+                            <img src="../static/images/linkedin_logo_cropped.jpg" alt="Dr. Anne Greeley" width="250" height="220"  class="center">
+                        </a>
+                        </p>
+                    </tr>
+                </table>
+                </div>
+                </a>
+            </div>
+
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px;width:350px">
+                <a href="../static/images/Recommendations_Clients-n_Employees.pdf">
+
+                    <div>
+
+                    <table>
+                        <tr >
+                            <p style="text-align:center">Client & Employee</p>
+                            <p style="text-align:center;margin-bottom:-5px">Recommendations</p>
+                            <br>
+                        </tr>
+                        <tr >
+                            <p>
+                                <a href="../static/images/Recommendations_Clients-n_Employees.pdf">
+                                    <img src="../static/images/IWU.png" alt="Dr. Anne Greeley" width="225" height="220"  class="center">
+                                </a>
+                            </p>
+                        </tr>
+                    </table>
+                </div>
+                </a>
+            </div>
+
+            
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:350px">
+                <a href="../static/images/Resume.pdf">
+                    <table>
+                    <tr >
+                        <p style="text-align:center">Resum&eacute;</p>
+                    </tr>
+                    <tr >
+                        <p>
+                            <a href="../static/images/Resume.pdf">
+                            <img src="../static/images/Resume.png" alt="Resume" width="250" height="321"  class="center"></a>
+
+                        </p>
+                    </tr>
+
+                </table>
+                </a>
+
+
+            </div>
+
+            
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:350px">
+                <a href="../static/images/Cover_letter.pdf">
+                <div>
+                <table>
+                    <tr >
+                        <p style="text-align:center">Cover Letter</p>
+                    </tr>
+
+                    <tr >
+                        <p>
+                            <a href="../static/images/Cover_letter.pdf">
+                            <img src="../static/images/Cover_Letter.png" alt="Resume" width="250" height="321"  class="center"></a>
+                        </p>
+                    </tr>
+
+                </table>
+                </div>
+                </a>
+
+            </div>
+
+            <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:350px">
+                <a href="https://github.com/JACedwards">
+                <div>
+                <table>
+                    <tr >
+                        <p style="text-align:center">Github</p>
+                    </tr>
+                    <br>
+                    <tr >
+                        <p>
+                            <a href="https://github.com/JACedwards">
+                            <img src="../static/images/github-logo.png" alt="Resume" width="250" height="250"  class="center"></a>
+                        </p>
+                    </tr>
+
+                </table>
+                </div>
+                </a>
+
+            </div>
+
+       
+    </main>
+
+    <div class="hero-text" style="margin-top: -15px; height:20px"></div>
+   
+    </div>
+
+    <main class="employ" style="align-content:center">
+
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/html-certified-large.png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/css-certified(204px).png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/javascript-certified.png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/nodejs-certified.png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/python-certified.png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/react-certified.png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/sql-certified.png" height="200px">
+            </div>
+
+        </div>
+        <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/flask-certified.png" height="200px">
+            </div>
+
+        </div>
+              <div class="main-articles" class="employ-size" style="margin-right:30px; margin-bottom:30px; width:225">
+            
+            <div>
+                <img src="../static/images/graphql-certified.png" height="200px">
+            </div>
+
+        </div>
+
+    </main> 
+   
+   
+    <footer>
+        <hr>
+        <div>
+
+        </div>
+    </footer>
+
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+a {
+    text-decoration: none;
+}
+
+body, html {
+    height: 100%;
+    margin: 0px;
+}
+
+body{
+    background-color: white;
+    color: darkblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* nav li {
+    display: inline;
+    margin: 20px;
+    
+    
+} */
+
+nav ul{
+    background-color: rgb(71, 3, 119);
+    margin: 0;  /*on outside of container, nav ul in this case*/
+    list-style-type: none; /* removes bullets from nav list elements*/
+    width: 100%;
+    padding: 0px;  /*space outside containter, between nav ul and its container*/
+    
+}
+
+nav a:link{
+    color: rgb(130, 154, 220)
+}
+
+nav {
+    display: block;
+    color: lightsteelblue;
+}
+
+nav a:visited{
+    color: rgb(192, 203, 255);
+}
+
+nav a{
+    
+    text-decoration: none;  /*removes underlines beneath links*/
+}
+
+nav a:hover{
+    color:white;
+    font-weight:lighter;
+    text-decoration: none;
+    /* background-color: rgba(3, 15, 119, 0.521); */
+/*     
+    padding: 1px; */
+}
+
+.nav-links{
+    font-size: 30px;
+    color: lightsteelblue;
+
+}
+
+/*linear-gradient: example below is black to black gradient with 0.5 opacity. can change rbg values
+for different background colors; gradient controlled by opacity with first set of rbga numbers starting at top of image,
+second for bottom*/
+.hero-image{
+    background-image: linear-gradient(rgba(112, 106, 237, 0.35), rgba(112, 106, 237, 0.35)), url("../images/yosemite-pano-1-best-for-emails.jpg");
+    background-repeat: repeat;
+    width: cover;
+   
+    
+    position: relative;  /*keeps in line with other elements*/
+}
+
+.fame-image{
+    background-image: linear-gradient(rgba(112, 106, 237, 0.35), rgba(112, 106, 237, 0.35)), url("images/Edwards_AFB_2020_Cover.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    background-position: 30% 20%;
+    position:relative; 
+    margin-top:20px /*keeps in line with other elements*/
+}
+
+.base-pic{
+    width: 100%;
+    margin-top:20px /*keeps in line with other elements*/
+}
+
+.hero-text{
+    color: darkblue;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(3, 15, 119, 0.521);
+}
+
+#main {
+    width: 70%;
+    float: left;
+    height: 100%;  /*prevents any overflow from spilling in below #side?*/
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+/* #main-employer {
+    width:;
+    align-self:center;
+    height: 100%;  /*prevents any overflow from spilling in below #side?*/
+   
+/* } */
+
+#side {
+    width: 20%; /* 75% + 20% != 100% because need some room for margins around sidebar/main */
+    float: left;
+    height: 100%; /*prevents any overflow from spilling in below #main?*/
+    padding: 20px;
+    
+}
+
+#side-employer {
+    float: left;
+    height: 100%; /*prevents any overflow from spilling in below #main?*/
+    padding: 20px;
+}
+.flower-banner{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%
+}
+
+
+#main-daughter {
+    width: 35%;
+    float: left;
+    height: 100%;  /*prevents any overflow from spilling in below #side?*/
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+
+#side-daughter {
+    width: 55%; /* 75% + 20% != 100% because need some room for margins around sidebar/main */
+    float: left;
+    height: 100%; /*prevents any overflow from spilling in below #main?*/
+    padding: 20px;
+}
+
+#profile-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    max-width: 100%;
+    height:auto;
+}
+
+#profile-details ul{
+    list-style-type: none;
+    padding-left: 0px;  /* removed indentation that remained after bullets removed (set to none)*/
+}
+
+#profile h2 {
+    display:inline; /*keeps h2 from taking up all the space on the page*/
+}
+
+#profile-details{
+    margin-right: 30px;
+    text-align: center;
+}
+
+.side-articles, .main-articles {
+    padding:10px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+    position: relative
+}
+
+.side-articles:before, .main-articles:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 20px solid white;
+    border-right: 20px solid darkgray;
+    width: 0;
+   }
+
+
+.side-articles{
+    background-color: rgba(3, 15, 119, 0.521);
+    
+}
+
+.main-articles{
+    background-color: rgba(3, 15, 119, 0.212);
+}
+
+form{
+    margin-top: 20px;
+}
+
+textarea, input{
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 90%
+}
+
+.side-articles h1{
+    margin-bottom: 20px;
+}
+
+footer{
+    bottom: 0px;
+    width: 100%;
+    height: 5vh; /* vh signifies percent of area currently viewable*/
+    margin-top: 0px; /*doesn't seem necessary to me, but added to keep <hr> tight*/
+}
+
+footer div{
+    text-align: center;
+    color: darkblue;
+}
+
+footer hr{
+    margin-top: 0px;
+    height: 12px;
+    border: 0px;
+    box-shadow: inset 0 12px 12px -12px white;
+}
+
+button{
+    margin-left:5px;
+}
+
+/* needed auto overflow when element contains floats, so that 
+everything below the element (<main> in this case) moves below the element*/
+main{
+    overflow:auto;  
+}
+
+.table-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-data-image{
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top:10px;
+
+}
+
+.table-data-image-employ{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+
+}
+.table-data-image-food-logo{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:20px;
+
+}
+
+input{
+color:gray;
+width:300px
+}
+
+.wife-banner{
+    background-image: url("images/flower-banner-purple-1600x1200.jpg");
+   /* background-repeat: repeat;
+    width: cover;
+    height: 50px;
+    position: relative;  /*keeps in line with other elements*/ 
+}
+
+
+.daughter-banner {
+    display: inline;
+    margin: 0px;
+    
+    
+}
+
+.dog-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.flex-container-1{
+    display: flex;
+    padding: 10px;
+    
+}
+
+.items-1{
+    padding: 10px;
+}
+
+.container-2{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.rest-logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    padding-top: 15px;
+}
+
+
+.rest-logos-img{
+    margin: 10px;
+} 
+
+.fl-bird-img-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:flex-start;  
+}
+
+.flr-bird-img{
+    margin: 20px; 
+}
+
+.employ{
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content:flex-start; */
+    padding-top: 15px;  
+}
+
+.employ-size{
+    width: 700px;
+    margin:20px;
+}
